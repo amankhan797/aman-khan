@@ -93,6 +93,9 @@
     @apply bg-transparent text-foreground;
     overflow-x: hidden;
   }
+  a, button, [role="button"], input[type="submit"], select, summary, [onclick] {
+    cursor: pointer;
+  }
 }
 
 @utility glass {
@@ -105,5 +108,18 @@
   &:hover {
     background-color: hsla(0, 0%, 100%, 0.12);
     box-shadow: 0 0 0 1px hsla(0, 0%, 100%, 0.25) inset;
+  }
+}
+
+@utility glass-green {
+  background-color: hsla(140, 100%, 30%, 0.15);
+  box-shadow: 0 0 0 1px hsla(140, 100%, 40%, 0.25) inset;
+  backdrop-filter: blur(5px);
+}
+
+@utility glass-green-hover {
+  &:hover {
+    background-color: hsla(140, 100%, 30%, 0.25);
+    box-shadow: 0 0 0 1px hsla(140, 100%, 40%, 0.4) inset;
   }
 }

@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react";
+import GlassButton from "@/components/ui/GlassButton";
 
 export default function Contact() {
   return (
@@ -9,18 +10,17 @@ export default function Contact() {
       <div className="w-full max-w-3xl text-center">
         <div className="flex items-center justify-center gap-3 mb-10">
           <Mail size={24} className="text-primary" />
-          <h2 className="text-3xl font-bold text-foreground">Get in Touch</h2>
+          <h2 className="text-3xl font-bold text-foreground uppercase">
+            Get in Touch
+          </h2>
         </div>
         <p className="text-lg text-muted-foreground mb-8">
           Have a question or want to work together? Feel free to reach out.
         </p>
-        <a
-          href="mailto:hello@amankhan.dev"
-          className="inline-flex items-center gap-2 glass glass-hover rounded-full px-8 py-3 text-foreground font-medium transition-colors"
-        >
+        <GlassButton href="mailto:hello@amankhan.dev" variant="green">
           <Mail size={18} />
           Say Hello
-        </a>
+        </GlassButton>
       </div>
     </section>
   );

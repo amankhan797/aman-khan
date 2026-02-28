@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AuroraBackground from "@/components/AuroraBackground";
 import Sidebar from "@/components/Sidebar";
+import CursorProvider from "@/components/CursorProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,9 +31,11 @@ export default function RootLayout({
         className={`${inter.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <AuroraBackground />
-        <Sidebar />
-        {children}
+        <CursorProvider>
+          <AuroraBackground />
+          <Sidebar />
+          {children}
+        </CursorProvider>
       </body>
     </html>
   );

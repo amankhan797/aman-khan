@@ -1,4 +1,5 @@
 import { User } from "lucide-react";
+import GlassCard from "@/components/ui/GlassCard";
 
 export default function About() {
   return (
@@ -9,9 +10,11 @@ export default function About() {
       <div className="w-full max-w-3xl">
         <div className="flex items-center gap-3 mb-10">
           <User size={24} className="text-primary" />
-          <h2 className="text-3xl font-bold text-foreground">About</h2>
+          <h2 className="text-3xl font-bold text-foreground uppercase">
+            About
+          </h2>
         </div>
-        <div className="glass rounded-xl p-8">
+        <GlassCard className="p-8">
           <p className="text-lg leading-relaxed text-muted-foreground">
             Hello! I&apos;m Aman Khan — a developer passionate about building
             clean, performant, and visually compelling web experiences. I enjoy
@@ -23,7 +26,7 @@ export default function About() {
             technologies, contributing to open source, or writing about what
             I&apos;ve learned.
           </p>
-        </div>
+        </GlassCard>
       </div>
     </section>
   );

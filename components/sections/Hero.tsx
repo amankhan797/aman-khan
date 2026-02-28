@@ -1,7 +1,9 @@
 "use client";
 
-import { ArrowDown } from "lucide-react";
 import { LogoLoop } from "@/components/LogoLoop";
+import GlassButton from "@/components/ui/GlassButton";
+import ShinyText from "@/components/ShinyText";
+import TerminalCard from "@/components/ui/TerminalCard";
 import {
   SiReact,
   SiNextdotjs,
@@ -145,16 +147,41 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="flex min-h-screen flex-col items-center justify-center px-6 text-center"
+      className="relative flex h-screen flex-col px-6 sm:px-12 lg:px-24"
     >
-      <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl">
-        Aman Khan
-      </h1>
-      <p className="mt-4 max-w-xl text-lg text-muted-foreground">
-        Developer &bull; Designer &bull; Creator
-      </p>
+      {/* Main content: vertically centered */}
+      <div className="flex flex-1 items-center">
+        <div className="flex flex-col-reverse items-center gap-10 sm:flex-row sm:items-center sm:justify-between w-full max-w-6xl mx-auto">
+          {/* Left: text + CTAs */}
+          <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h1 className="text-5xl tracking-tight text-foreground uppercase sm:text-7xl lg:text-8xl leading-[0.9]">
+              <ShinyText
+                text="AMAN KHAN"
+                speed={4}
+                color="#8b949e"
+                shineColor="#ffffff"
+                spread={120}
+                className="text-5xl tracking-tight uppercase sm:text-7xl lg:text-8xl leading-[0.9]"
+              />
+            </h1>
+            <p className="mt-6 max-w-md text-base text-muted-foreground">
+              I build things for the web.
+            </p>
+            <div className="mt-8 flex gap-4">
+              <GlassButton href="#projects">View Projects</GlassButton>
+              <GlassButton href="#contact" variant="green">Get in Touch</GlassButton>
+            </div>
+          </div>
 
-      <div className="mt-12 w-full max-w-2xl">
+          {/* Right: terminal */}
+          <div className="flex-shrink-0">
+            <TerminalCard />
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom: logo loop + scroll indicator pinned to bottom */}
+      <div className="pb-6 w-screen -mx-6 sm:-mx-12 lg:-mx-24">
         <LogoLoop
           logos={techLogos}
           speed={60}
@@ -165,14 +192,6 @@ export default function Hero() {
           fadeOutColor="transparent"
         />
       </div>
-
-      <a
-        href="#projects"
-        className="mt-10 flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
-      >
-        Scroll down
-        <ArrowDown size={16} className="animate-bounce" />
-      </a>
     </section>
   );
 }
